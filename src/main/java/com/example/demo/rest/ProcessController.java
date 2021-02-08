@@ -35,7 +35,7 @@ public class ProcessController {
 
     @RequestMapping(
             value = "/search-airport",
-            method = RequestMethod.POST)
+            method = RequestMethod.GET)
     public Response<Airport> searchAirport(@RequestParam("code") String code) {
         return airpotService.findByCode(code);
     }
@@ -52,7 +52,7 @@ public class ProcessController {
 
     @RequestMapping(
             value = "/search-airline-company",
-            method = RequestMethod.POST)
+            method = RequestMethod.GET)
     public Response<AirlineCompany> searchAirlineCompany(@RequestParam("code") String code) {
         return airlineCompanyService.findByCode(code);
     }
@@ -68,7 +68,7 @@ public class ProcessController {
 
     @RequestMapping(
             value = "/search-flight",
-            method = RequestMethod.POST)
+            method = RequestMethod.GET)
     public Response<Flight> searchFlight(@RequestParam("code") String code) {
         return flightService.findByCode(code);
     }
@@ -76,7 +76,7 @@ public class ProcessController {
     @RequestMapping(
             value = "/update-quota",
             method = RequestMethod.POST)
-    public Response<Flight> searchFlight(@RequestParam("code") String flightCode,@RequestParam("quota") int quota) {
+    public Response<Flight> updateQouta(@RequestParam("code") String flightCode,@RequestParam("quota") int quota) {
         return flightService.updateQouta(flightCode,quota);
     }
 
@@ -92,7 +92,7 @@ public class ProcessController {
 
     @RequestMapping(
             value = "/search-route",
-            method = RequestMethod.POST)
+            method = RequestMethod.GET)
     public Response<Route> searchRoute(@RequestParam("code") String code) {
         return routeService.findByCode(code);
     }
@@ -109,7 +109,7 @@ public class ProcessController {
 
     @RequestMapping(
             value = "/search-ticket",
-            method = RequestMethod.POST)
+            method = RequestMethod.GET)
     public Response<Ticket> searchTicket(@RequestParam("ticketNumber") String ticketNumber) {
         return ticketService.searchTicket(ticketNumber);
     }
